@@ -1,6 +1,6 @@
 {
   "name": "@badrap/material-symbols-omnibus",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "type": "module",
   "description": "",
   "repository": {
@@ -11,7 +11,7 @@
     "access": "public",
     "provenance": true
   },
-  "exports": "./dist/src/index.js",
+  "exports": "./dist/index.js",
   "files": [
     "src",
     "dist"
