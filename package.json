@@ -16,11 +16,14 @@
     "src",
     "dist"
   ],
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
     "lint": "eslint --max-warnings 0 .",
     "typecheck": "tsc --skipLibCheck --noEmit",
     "build": "rm -rf dist/* && tsc -p ./tsconfig.build.json",
-    "update": "rm -rf data/* && node --loader ts-node/esm scripts/update.ts > data/symbols.json",
+    "generate": "rm -rf data/* && node --loader ts-node/esm scripts/generate.ts > src/_data.ts",
     "prepack": "npm run build",
     "changeset": "changeset",
     "bump": "changeset version",
@@ -37,7 +40,6 @@
     "@changesets/changelog-github": "^0.5.0",
     "@changesets/cli": "^2.27.1",
     "@types/node": "^20.12.7",
-    "@types/react": "^18.3.1",
     "@typescript-eslint/eslint-plugin": "^7.7.1",
     "@typescript-eslint/parser": "^7.7.1",
     "eslint": "^8.57.0",
@@ -46,8 +48,5 @@
     "prettier": "^3.2.5",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.5"
-  },
-  "peerDependencies": {
-    "react": "^18.0.0"
   }
 }
