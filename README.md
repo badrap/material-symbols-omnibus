@@ -5,7 +5,7 @@
 
 A library to resolve a [Material Symbol icons](https://fonts.google.com/icons) name to an SVG path.
 
-The icons are the outlined variant with the 48px optical size. The icon can either be unfilled or filled.
+The icons are the outlined variant with the 20px optical size. Both the filled and outlined versions are available.
 
 ## Installation
 

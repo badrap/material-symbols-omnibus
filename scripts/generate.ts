@@ -35,12 +35,12 @@ async function fetchSymbolNames() {
 }
 
 const SVG_REX =
-  /^<svg .*? height="48" viewBox="0 -960 960 960" width="48"><path d="([^"]*)"\/><\/svg>$/;
+  /^<svg .*?viewBox="0 -960 960 960".*?><path d="([^"]*)"\/><\/svg>$/;
 
 async function fetchSymbolSvg(name: string, fill: boolean) {
   const slug = encodeURIComponent(name);
   const variant = fill ? "fill1" : "default";
-  const url = `https://fonts.gstatic.com/s/i/short-term/release/materialsymbolsoutlined/${slug}/${variant}/48px.svg`;
+  const url = `https://fonts.gstatic.com/s/i/short-term/release/materialsymbolsrounded/${slug}/${variant}/20px.svg`;
 
   const res = await fetch(url);
   if (!res.ok) {
@@ -57,21 +57,23 @@ async function fetchSymbolSvg(name: string, fill: boolean) {
   return match[1] as string;
 }
 
-async function worker(
-  names: Iterable<string>,
-  output: Record<string, [string, string]>,
-) {
+async function worker(names: Iterable<string>, output: Record<string, string>) {
   for (const name of names) {
     const fill0 = await fetchSymbolSvg(name, false);
     const fill1 = await fetchSymbolSvg(name, true);
-    output[name] = [fill0, fill1];
+
+    const normalizedName = name.replace(/_/g, "-");
+    output[normalizedName] = fill1;
+    if (fill0 !== fill1) {
+      output[`${normalizedName}-outline`] = fill0;
+    }
   }
 }
 
 async function main(concurrency = 15) {
   const symbols = await fetchSymbolNames();
 
-  const output: Record<string, [string, string]> = {};
+  const output: Record<string, string> = {};
   const names = symbols[Symbol.iterator]();
   const workers = [];
   for (let i = 0; i < concurrency; i++) {

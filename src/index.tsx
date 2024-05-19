@@ -11,16 +11,13 @@ export type MaterialSymbolInfo = {
 
 export function resolveMaterialSymbol(props: {
   name: string;
-  filled?: boolean;
 }): MaterialSymbolInfo | undefined {
-  const { name, filled } = props;
-  if (!hasOwnProperty.call(data, name)) {
+  const { name } = props;
+
+  const path = name as keyof typeof data;
+  if (typeof path === "undefined" || !hasOwnProperty.call(data, name)) {
     return undefined;
   }
-  return {
-    height: 48,
-    width: 48,
-    viewBox: "0 -960 960 960",
-    path: data[name as keyof typeof data][filled ? 1 : 0]!,
-  };
+
+  return { height: 20, width: 20, viewBox: "0 -960 960 960", path };
 }
