@@ -9,15 +9,12 @@ export type MaterialSymbolInfo = {
   path: string;
 };
 
-export function resolveMaterialSymbol(props: {
-  name: string;
-}): MaterialSymbolInfo | undefined {
-  const { name } = props;
-
+export function resolveMaterialSymbol(
+  name: string,
+): MaterialSymbolInfo | undefined {
   const path = name as keyof typeof data;
   if (typeof path === "undefined" || !hasOwnProperty.call(data, name)) {
     return undefined;
   }
-
   return { height: 20, width: 20, viewBox: "0 -960 960 960", path };
 }

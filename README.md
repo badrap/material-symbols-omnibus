@@ -18,8 +18,8 @@ npm i @badrap/material-symbols-omnibus
 ```tsx
 import { resolveMaterialSymbol } from "@badrap/material-symbols-omnibus";
 
-export function MaterialSymbol(props: { name: string; filled?: boolean }) {
-  const data = resolveMaterialSymbol(props);
+export function MaterialSymbol(props: { name: string }) {
+  const data = resolveMaterialSymbol(props.name);
   if (!data) {
     return null;
   }
