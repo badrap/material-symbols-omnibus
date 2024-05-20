@@ -40,7 +40,7 @@ const SVG_REX =
 async function fetchSymbolSvg(name: string, fill: boolean) {
   const slug = encodeURIComponent(name);
   const variant = fill ? "fill1" : "default";
-  const url = `https://fonts.gstatic.com/s/i/short-term/release/materialsymbolsrounded/${slug}/${variant}/20px.svg`;
+  const url = `https://fonts.gstatic.com/s/i/short-term/release/materialsymbolsrounded/${slug}/${variant}/24px.svg`;
 
   const res = await fetch(url);
   if (!res.ok) {

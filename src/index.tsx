@@ -16,5 +16,5 @@ export function resolveMaterialSymbol(
   if (path === undefined || !hasOwnProperty.call(data, name)) {
     return undefined;
   }
-  return { height: 20, width: 20, viewBox: "0 -960 960 960", path };
+  return { height: 24, width: 24, viewBox: "0 -960 960 960", path };
 }
