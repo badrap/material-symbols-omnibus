@@ -1,5 +1,11 @@
 # @badrap/material-symbols-omnibus
 
+## 0.0.8
+
+### Patch Changes
+
+- 6fcad60: Publish npm packages using trusted publishing
+
 ## 0.0.2
 
 ### Patch Changes
