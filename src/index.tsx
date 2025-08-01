@@ -12,7 +12,9 @@ export type MaterialSymbolInfo = {
 export function resolveMaterialSymbol(
   name: string,
 ): MaterialSymbolInfo | undefined {
-  const path = data[name as keyof typeof data];
+  const path = Object.hasOwn(data, name)
+    ? data[name as keyof typeof data]
+    : undefined;
   if (path === undefined || !hasOwnProperty.call(data, name)) {
     return undefined;
   }

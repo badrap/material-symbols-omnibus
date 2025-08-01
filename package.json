@@ -23,7 +23,7 @@
     "lint": "eslint --max-warnings 0 .",
     "typecheck": "tsc --skipLibCheck --noEmit",
     "build": "rm -rf dist/* && tsc -p ./tsconfig.build.json",
-    "generate": "rm -rf data/* && node --loader ts-node/esm scripts/generate.ts > src/_data.ts",
+    "generate": "rm -rf data/* && tsx scripts/generate.ts > src/_data.ts",
     "prepack": "npm run build",
     "changeset": "changeset",
     "bump": "changeset version",
@@ -36,17 +36,16 @@
   },
   "homepage": "https://github.com/badrap/material-symbols-omnibus#readme",
   "devDependencies": {
-    "@badrap/valita": "^0.3.8",
-    "@changesets/changelog-github": "^0.5.0",
-    "@changesets/cli": "^2.27.1",
-    "@types/node": "^20.12.7",
-    "@typescript-eslint/eslint-plugin": "^7.7.1",
-    "@typescript-eslint/parser": "^7.7.1",
-    "eslint": "^8.57.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-prettier": "^5.1.3",
-    "prettier": "^3.2.5",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.4.5"
+    "@badrap/valita": "^0.4.6",
+    "@changesets/changelog-github": "^0.5.1",
+    "@changesets/cli": "^2.29.5",
+    "@eslint/js": "^9.32.0",
+    "@types/node": "^24.1.0",
+    "eslint": "^9.32.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.3",
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.38.0"
   }
 }
