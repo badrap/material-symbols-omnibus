@@ -1,5 +1,11 @@
 # @badrap/material-symbols-omnibus
 
+## 0.0.10
+
+### Patch Changes
+
+- 9d22c01: emit file on compile
+
 ## 0.0.9
 
 ### Patch Changes
