@@ -3,7 +3,7 @@ import prettierRecommended from "eslint-plugin-prettier/recommended";
 import tseslint from "typescript-eslint";
 import { globalIgnores } from "eslint/config";
 
-export default [
+export default tseslint.config(
   globalIgnores(["./dist", "./src/_data.ts"]),
   eslint.configs.recommended,
   ...tseslint.configs.strictTypeChecked,
@@ -61,4 +61,4 @@ export default [
       "@typescript-eslint/switch-exhaustiveness-check": "error",
     },
   },
-];
+);

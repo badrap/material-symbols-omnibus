@@ -24,10 +24,9 @@
     "typecheck": "tsc --skipLibCheck --noEmit",
     "build": "rm -rf dist/* && tsc -p ./tsconfig.build.json",
     "generate": "rm -rf data/* && tsx scripts/generate.ts > src/_data.ts",
-    "prepack": "npm run build",
     "changeset": "changeset",
     "bump": "changeset version",
-    "release": "changeset publish"
+    "release": "npm run build && changeset publish"
   },
   "author": "Joachim Viide <jviide@iki.fi>",
   "license": "Apache-2.0",
