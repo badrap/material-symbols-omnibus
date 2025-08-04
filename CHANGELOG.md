@@ -1,5 +1,11 @@
 # @badrap/material-symbols-omnibus
 
+## 0.0.11
+
+### Patch Changes
+
+- 39105d1: fix tsconfig.json outDir
+
 ## 0.0.10
 
 ### Patch Changes
