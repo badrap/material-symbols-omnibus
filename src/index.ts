@@ -1,6 +1,4 @@
-import { data } from "./_data.js";
-
-const hasOwnProperty = Object.prototype.hasOwnProperty;
+import { data } from "./_data.ts";
 
 export type MaterialSymbolInfo = {
   height: number;
@@ -15,7 +13,7 @@ export function resolveMaterialSymbol(
   const path = Object.hasOwn(data, name)
     ? data[name as keyof typeof data]
     : undefined;
-  if (path === undefined || !hasOwnProperty.call(data, name)) {
+  if (path === undefined) {
     return undefined;
   }
   return { height: 24, width: 24, viewBox: "0 -960 960 960", path };
