@@ -21,7 +21,7 @@
   },
   "scripts": {
     "lint": "eslint --max-warnings 0 .",
-    "typecheck": "tsc --skipLibCheck --noEmit",
+    "typecheck": "tsc --noEmit",
     "build": "rm -rf dist/* && tsc -p ./tsconfig.build.json",
     "generate": "rm -rf data/* && tsx scripts/generate.ts > src/_data.ts",
     "changeset": "changeset",
