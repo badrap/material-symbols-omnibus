@@ -1,5 +1,11 @@
 # @badrap/material-symbols-omnibus
 
+## 0.0.9
+
+### Patch Changes
+
+- 6139177: fix: build on release
+
 ## 0.0.8
 
 ### Patch Changes
